@@ -46,7 +46,6 @@ ul {
 
 header{
 margin-top: calc(4.1rem + var(--nav-heigth));
-
 }
 
 header::before {
@@ -281,4 +280,27 @@ body.menu-expended .logo path {
 
 body.menu-expended button path {
   stroke: white;
+}
+
+/*==== SERVICES ===========================================================================*/
+
+
+#services header h4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 150%;
+
+  letter-spacing: 0.08rem;
+
+  text-transform: uppercase;
+}
+
+#services header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--secondary-headline-color);
+
+  margin-bottom: 6rem;
+
 }
