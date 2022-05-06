@@ -14,3 +14,18 @@ function closeMenu() {
   document.body.classList.remove('menu-expended')
 }
 
+
+ScrollReveal({
+  origin: 'top', 
+  distance: '30px',
+}).reveal(`
+#home, 
+#home img, 
+#home .stats,
+#services,
+#services header,
+#services .card,
+#about,
+#about header,
+#about .content,
+#about img`);
