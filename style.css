@@ -17,6 +17,7 @@
   --border-color: hsl(148, 23%, 89%);
   --nav-heigth: 7.2rem;
   --bg-ligth-color: hsl(180, 14%, 97%);
+  --houver-color: hsl(170, 100%, 14%);
 }
 
 html {
@@ -53,6 +54,10 @@ ul {
 
 section {
   padding-block: 10rem; /*padding top e bottom*/
+}
+
+img {
+  max-width: 100%;
 }
 
 section header h4{
@@ -92,6 +97,36 @@ section .content p {
   color: var(--Secondary-paragraph-colors);
 }
 
+.button {
+  background-color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 18px;
+  color: hsl(0, 0%, 100%);
+
+  padding: 1.6rem 3.2rem;
+  width: fit-content; /*se adapta ao conteudo*/
+  
+  margin-bottom: 6rem;
+
+
+  border: none;
+  border-radius: 4rem;
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem; /*espaçamento*/
+
+
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--houver-color);
+  transition: background 200ms;
+}
 /*==== #HOME===========================================================================*/
 
 #home {
@@ -111,6 +146,9 @@ padding-top: calc(4.1rem + var(--nav-heigth));
   z-index: -1; /*joga o conteudo para trás*/
 }
 
+#home .button{
+  margin-inline: auto;
+}
 
 #home p{
   font-size: 1.8rem;
@@ -119,31 +157,6 @@ padding-top: calc(4.1rem + var(--nav-heigth));
   margin-bottom: 3.2rem;
 }
 
-#home button{
-  background-color: var(--primary-color);
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 18px;
-  color: hsl(0, 0%, 100%);
-
-  width: 26.3rem;
-  height: 6.2rem;  
-  
-  margin-bottom: 6rem;
-
-
-  border: none;
-  border-radius: 4rem;
-  text-transform: uppercase;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem; /*espaçamento*/
-
-  margin-right: auto;
-  margin-left: auto;
-}
 
 #home img{
   width: 26.4rem;
@@ -363,4 +376,76 @@ body.menu-expended button path {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
   
+}
+/*==== CONTACT ===========================================================================*/
+#contact {
+  text-align: left;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+
+}
+
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+/*==== FOOTER ===========================================================================*/
+footer{
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+
+  text-align: left;
+  color: white;
+
+}
+footer .logo{ 
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path {
+  fill: white;
+}
+
+footer p {
+  color: var(--bg-ligth-color);
+  line-height: 2;
+
+  margin-bottom: 3.2rem;
+}
+
+footer .social-links{
+  justify-content: flex-start;
+}
+/*==== BACK TO TOP
+===========================================================================*/
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+#backToTopButton.show { 
+  opacity: 1;
+  visibility: visible;
 }
