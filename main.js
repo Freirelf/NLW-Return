@@ -6,41 +6,37 @@ function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
 
-  activateMenuAtCurrentSection (home)
+  activateMenuAtCurrentSection(home)
+  activateMenuAtCurrentSection(services)
+  activateMenuAtCurrentSection(about)
+  activateMenuAtCurrentSection(contact)
 }
 
-
 function activateMenuAtCurrentSection(section) {
-  // linha alvo
   const targetLine = scrollY + innerHeight / 2
 
   // verificar se a seção passou da linha
   // quais dados vou precisar?
+  const sectionTop = section.offsetTop
+  const sectionHeight = section.offsetHeight
+  const sectionTopReachOrPassedTargetline = targetLine >= sectionTop
 
-  // o topo da seção
-  const sectionTop = home.offsetTop
-
-  // altura da seção
-  const sectionHeight = home.offsetHeight
-
-  // o topo da seção chegou ou ultrapassou a linha alvo
-  const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
-
-  // informações dos dados e lógica 
-  console.log (sectionTopReachOrPassedTargetLine)
+  // verificar se a base está abaixo da linha alvo
 
   const sectionEndsAt = sectionTop + sectionHeight
-
   const sectionEndPassedTargetline = sectionEndsAt <= targetLine
 
-  const sectionBoundaries = sectionTopReachOrPassedTargetLine && 
-  !sectionEndPassedTargetline
-  
-  
+  // limites da seção
+  const sectionBoundaries =
+    sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline
 
+  const sectionId = section.getAttribute('id')
+  const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
 
-
-
+  menuElement.classList.remove('active')
+  if (sectionBoundaries) {
+    menuElement.classList.add('active')
+  }
 }
 
 function showNavOnScroll() {
